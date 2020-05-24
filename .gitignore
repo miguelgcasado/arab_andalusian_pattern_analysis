@@ -11,6 +11,7 @@ profile_default/
 ipython_config.py
 
 __pypackages__/
+.idea
 
 # Personal stuffs
 data/
