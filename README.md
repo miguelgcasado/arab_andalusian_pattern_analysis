@@ -1,3 +1,5 @@
-Repository related to Master Thesis project in MTG 2019-2020
+# Computational Analysis of Arab-Andalusian Music Through Symbolic Pattern Discovery Algorithms
 
-Study of Arab-Andalusian patterns through symbolic pattern discovery algorithms
+Repository related to Master Thesis project in of SMC Master at the MTG (Barcelona)
+
+Miguel García Casado (miguel.garciac@upf.edu)
