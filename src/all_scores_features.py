@@ -9,6 +9,9 @@ import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
+import matplotlib.pyplot as plt
+import seaborn as sn
 
 andalusian_description = pd.read_json("../data/andalusian_description.json")
 mbid_tab_lookup = pn.mbids_per_tab(andalusian_description)
@@ -141,7 +144,7 @@ def compute_X_Y_model(
     return X, Y
 
 
-def train_classifier_features(X, Y):
+def train_classifier_features(X, Y, plotMatrix=False):
     """
     Function that computes nawba classifier model and return prediction accuracy and improtance of the features.
     """
@@ -165,5 +168,13 @@ def train_classifier_features(X, Y):
     X_test = [x[0] for x in test]
     Y_pred = clf.predict(X_test)
     Y_test = [x[1] for x in test]
+
+    if plotMatrix:
+        plt.figure(figsize=(10, 10))
+        plt.title('Confusion matrix of nawba classifier using pattern occurrences and features')
+        sn.heatmap(confusion_matrix(Y_pred, Y_test),  linewidths=1, annot=True)
+        plt.xlabel('Predicted Nawba')
+        plt.ylabel('True Nawba')
+        plt.show()
 
     return accuracy_score(Y_pred, Y_test), importance

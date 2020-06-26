@@ -126,6 +126,10 @@ def train_classifier(data, mbid_nawba_lookup, plotMatrix=False):
 
     if plotMatrix:
         plt.figure(figsize=(10, 10))
-        sn.heatmap(confusion_matrix(y_pred, y_true))
+        plt.title('Confusion matrix of nawba classifier using pattern occurrences')
+        sn.heatmap(confusion_matrix(y_pred, y_true), linewidths=1, annot=True)
+        plt.xlabel('Predicted Nawba')
+        plt.ylabel('True Nawba')
+        plt.show()
 
     return accuracy_score(y_pred, y_true)

@@ -273,7 +273,6 @@ def get_features_array(file):
     features_array.append(under_first_octave(notes_rests))
     features_array.append(direction(notes_rests))
     features_array.append(interval_first_last_note(notes_rests))
-    features_array.append(interval_first_last_note(notes_rests))
     features_array.append(interval_two_last_notes(notes_rests))
     features_array.append(most_repeated_interval(notes_rests))
     features_array.append(number_M_intervals(notes_rests))
